@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cmn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,13 +16,14 @@
 			list-style: none;
 		}
         .view-box {
-			width: 800px;
-			height: 500px;
-			padding: 5px;
-			margin: 100px auto;
-			border: 1px solid #CCC;
-			background-color: #F2F2F2;
+			width: 820px;
+			height: 480px;
+			padding: 2px;
+			margin: 3px auto;
+			/* border: 1px solid #CCC;
+			background-color: #F2F2F2; */
 			border-radius: 5px;
+			overflow: hidden;
 		}
         .view-box ul {
 			width: 100%;
@@ -31,13 +32,21 @@
 			overflow: hidden;
 		}
         .view-box li {
+			width: 800px;
+          height: 450px;
+          list-style: none;
 			position: absolute;
 			top: -325px;
 		}
         .view-box li img{
-
-            width: 800px;
-            height: 500px;
+			margin: 0;
+         padding: 0;
+         border: 0;
+         font-size: 100%;
+          font: inherit;
+          vertical-align: baseline;
+            width: 820px;
+            height: 480px;
         }
 
         .view-box li:first-child {
@@ -115,17 +124,169 @@
 			100%{ top:325px; opacity:0; z-index:0; }
 		}
 
+		.content{
+			margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+           vertical-align: baseline;
+		}
+		.content h1 {
+        font-size: 50px;
+        color: thistle;
+        text-shadow: 0px 1px 1px #f4f4f4;
+        text-align: center;
+        padding: 10px 0 10px;
+}
+.container {
+    margin: 0 auto;
+    overflow: hidden;
+    width: 1000px;
+}
+#content-slider {
+    width: 100%;
+    height: 600px;
+    margin: 10px auto 0;
+}
+ #slider {
+    background:white;
+    border: 3px solid #eaeaea;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    height: 500px;
+    width: 840px;
+    margin: 10px auto 0;
+    overflow: visible;
+    position: relative;
+} 
+#slider li {
+    width: 820px;
+    height: 480px;
+    position: absolute;
+    top: 1px;
+    list-style: none;
+}
+#slider li.firstanimation {
+    -webkit-animation: cycle 25s linear infinite;
+}
+#slider li.secondanimation {
+    
+    -webkit-animation: cycletwo 25s linear infinite;
+}
+#slider li.thirdanimation {
+    -webkit-animation: cyclethree 25s linear infinite;
+}
+#slider li.fourthanimation {
+    
+    -webkit-animation: cyclefour 25s linear infinite;
+}
+#slider li.fifthanimation {
+   
+    -webkit-animation: cyclefive 25s linear infinite;
+}
+#slider .tooltip {
+    background:rgba(0,0,0,0.4);
+    width: 300px;
+    height: 60px;
+    /* position: relative; */
+     bottom: 90px;   
+	 /* 黑色按钮的高度  */
+    left: 2px;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+#slider:hover .tooltip{
+    /* position: absolute; */
+	position: relative;
+    left: 0px;
+	/* top: -5px; */
+}
+#slider .tooltip h1 {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 60px;
+    padding: 0 0 0 10px;
+}
+.progress-bar {
+    position: relative;
+    top: -5px;
+	/* 线条的高度 */
+    width: 680px;
+    height: 5px;
+    background:thistle;
+    -webkit-animation: fullexpand 20s ease-out infinite;
+}
+@keyframes fullexpand{
+    0%{width: 0%; opacity: 1;}
+    30%{width: 30%; opacity: 1;}
+    60%{width: 60%; opacity: 2;}
+    90%{width: 90%; opacity: 2.2;}
+    100%{width: 100%; opacity: 2.3;}
+}
+
 </style>
 </head>
 <body>
-    <div class="view-box">
-		<ul>
-			<li><img src="./timg1.jpg" alt=""></li>
-			<li><img src="./timg2.jpg" alt=""></li>
-			<li><img src="./timg3.jpg" alt=""></li>
-			<li><img src="./timg4.jpg" alt=""></li>
-			<li><img src="./timg5.jpg" alt=""></li>
-		</ul>
+
+	<div class="content">
+		<h1>我们是可爱的兔子</h1>
 	</div>
+	<div class="container">
+		<div id="content-slider">
+       <div id="slider">
+		<div class="view-box">
+		<ul>
+     	<li id="first" class="firstanimation">
+			<a href="">
+			<img src="./timg1.jpg" alt="">	
+			</a>
+			<div class="tooltip">
+				<h1>rabbit1</h1>
+			</div>
+		 </li>
+
+		<li id="second" class="secondanimation">
+			<a href="">
+			<img src="./timg2.jpg" alt="">	
+			</a>
+			<div class="tooltip">
+					<h1>rabbit2</h1>
+				</div>
+			</li>
+		<li id="third" class="thirdanimation">
+			<a href="">
+			<img src="./timg3.jpg" alt="">	
+			</a>
+			<div class="tooltip">
+					<h1>rabbit3</h1>
+				</div>
+			</li>
+		<li id="fourth" class="fourthanimation">
+			<a href="">
+			<img src="./timg4.jpg" alt="">	
+			</a>
+			<div class="tooltip">
+					<h1>rabbit4</h1>
+				</div>
+			</li>
+		<li id="fifth" class="fifthanimation">
+			<a href="">
+			<img src="./timg5.jpg" alt="">	
+			</a>
+			<div class="tooltip">
+					<h1>rabbit5</h1>
+				</div>
+			</li>
+		</ul>
+	
+	  </div>
+	<div class="progress-bar"></div>
+	   </div>
+
+		</div>
+
+	</div>
+
+    
 </body>
 </html>
